@@ -42,7 +42,8 @@ class SignupScreen extends React.Component {
         <TouchableHighlight
           style={styles.button}
           underlayColor="#d693d5"
-          onPress={this.handleSubmit.bind(this)}>
+          onPress={this.handleSubmit.bind(this)}
+        >
           <Text style={styles.buttonTitle}>Send</Text>
         </TouchableHighlight>
       </View>
@@ -83,7 +84,7 @@ const styles = StyleSheet.create({
   buttonTitle: {
     color: '#fff',
     fontSize: 18,
-  }
+  },
 });
 
 export default SignupScreen;
