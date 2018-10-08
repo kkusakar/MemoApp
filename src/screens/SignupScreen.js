@@ -9,7 +9,7 @@ class SignupScreen extends React.Component {
         <Text style={styles.title}>Sing Up</Text>
         <TextInput style={styles.input} value="Email Address" />
         <TextInput style={styles.input} value="Password" />
-        <TouchableHighlight style={styles.button} underlayColor="#d693d5">
+        <TouchableHighlight style={styles.button} underlayColor="#d693d5" onPress={() => { this.props.navigation.navigate('Home'); }}>
           <Text style={styles.buttonTitle}>Send</Text>
         </TouchableHighlight>
       </View>

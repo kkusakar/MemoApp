@@ -5,19 +5,19 @@ class MemoList extends React.Component {
   render() {
     return (
       <View style={styles.memoList}>
-        <TouchableHighlight onPress={() => {this.props.navigation.navigate('Detail'); }}>
+        <TouchableHighlight onPress={() => { this.props.navigation.navigate('Detail'); }}>
           <View style={styles.memoListItem}>
             <Text style={styles.memoTitle}>講座のアイテム</Text>
             <Text style={styles.memoDate}>2017/10/10</Text>
           </View>
         </TouchableHighlight>
-        <TouchableHighlight onPress={() => {this.props.navigation.navigate('Detail'); }}>
+        <TouchableHighlight onPress={() => { this.props.navigation.navigate('Detail'); }}>
           <View style={styles.memoListItem}>
             <Text style={styles.memoTitle}>講座のアイテム</Text>
             <Text style={styles.memoDate}>2017/10/10</Text>
           </View>
         </TouchableHighlight>
-        <TouchableHighlight onPress={() => {this.props.navigation.navigate('Detail'); }}>
+        <TouchableHighlight onPress={() => { this.props.navigation.navigate('Detail'); }}>
           <View style={styles.memoListItem}>
             <Text style={styles.memoTitle}>講座のアイテム</Text>
             <Text style={styles.memoDate}>2017/10/10</Text>
