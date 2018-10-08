@@ -14,7 +14,7 @@ class LoginScreen extends React.Component {
     firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
       .then((user) => {
         console.log('success');
-        this.props.navigation.navigate('Home');
+        this.props.navigation.navigate('Home', { currentUser: user });
       })
       .catch((error) => {
         console.log(error);
@@ -30,7 +30,7 @@ class LoginScreen extends React.Component {
           value={this.state.email}
           onChangeText={(text) => { this.setState({ email: text }); }}
           autoCapitalize="none"
-          autoCorrect="false"
+          autoCorrect={false}
           placeholder="Email Address"
         />
         <TextInput
@@ -38,7 +38,7 @@ class LoginScreen extends React.Component {
           value={this.state.password}
           onChangeText={(text) => { this.setState({ password: text }); }}
           autoCapitalize="none"
-          autoCorrect="false"
+          autoCorrect={false}
           placeholder="Password"
           secureTextEntry
         />
