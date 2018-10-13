@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableHighlight } from 'react-native';
 import { Font } from 'expo';
-import fontAwsome from '../../assets/fonts/fa-solid-900.ttf'
+import fontAwsome from '../../assets/fonts/fa-solid-900.ttf';
 
 class CircleButton extends React.Component {
   state = {

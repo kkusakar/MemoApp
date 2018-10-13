@@ -3,20 +3,42 @@ import { StyleSheet, View, Text } from 'react-native';
 
 import CircleButton from '../elements/CircleButton';
 
+const dateString = (date) => {
+  const str = date.toDate().toISOString().split('T')[0];
+  console.log(str);
+  return str;
+};
+
 class MemoDetailScreen extends React.Component {
+  state = {
+    memo: {},
+  }
+
+  componentWillMount() {
+    const { params } = this.props.navigation.state;
+    this.setState({ memo: params.memo });
+  }
+
   render() {
+    const { memo } = this.state;
     return (
       <View style={styles.container}>
         <View style={styles.memoHeader}>
-          <Text style={styles.memoHeaderTitle}>講座のアイデア</Text>
-          <Text style={styles.memoHeaderDate}>2017/12/12</Text>
+          <Text style={styles.memoHeaderTitle}>{memo.body.substring(0, 10)}</Text>
+          <Text style={styles.memoHeaderDate}>{dateString(memo.createdOn)}</Text>
         </View>
 
         <View style={styles.memoContent}>
-          <Text>講座のアイデアです。</Text>
+          <Text style={styles.memoBody}>
+            {memo.body}
+          </Text>
         </View>
 
-        <CircleButton color="white" style={styles.editButton} onPress={() => { this.props.navigation.navigate('Edit'); }}>
+        <CircleButton
+          color="white"
+          style={styles.editButton}
+          onPress={() => { this.props.navigation.navigate('Edit', { memo }); }}
+        >
           {'\uf303'}
         </CircleButton>
       </View>
@@ -52,6 +74,10 @@ const styles = StyleSheet.create({
     paddingRight: 20,
     paddingBottom: 20,
     flex: 1,
+  },
+  memoBody: {
+    lineHeight: 22,
+    fontSize: 17,
   },
   editButton: {
     top: 72,
