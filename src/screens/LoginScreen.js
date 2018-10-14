@@ -12,7 +12,7 @@ class LoginScreen extends React.Component {
   // eslint-disable-next-line
   handleSubmit() {
     firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then((user) => {
+      .then(() => {
         console.log('success');
         this.props.navigation.navigate('Home');
       })
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   buttonTitle: {
     color: '#fff',
     fontSize: 18,
-  }
+  },
 });
 
 export default LoginScreen;
