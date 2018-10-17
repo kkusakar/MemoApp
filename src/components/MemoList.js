@@ -2,9 +2,12 @@ import React from 'react';
 import { StyleSheet, View, Text, TouchableHighlight, FlatList } from 'react-native';
 
 const dateString = (date) => {
-  const str = date.toDate().toISOString().split('T')[0];
-  console.log(str);
-  return str;
+  if (date == null) { return ''; }
+  const dateObject = typeof date.toDate === 'undefined' ? date : date.toDate();
+  return dateObject.toISOString().split('T')[0];
+  // const str = date.toDate().toISOString().split('T')[0];
+  // console.log(str);
+  // return str;
 };
 
 class MemoList extends React.Component {

@@ -4,8 +4,10 @@ import { StyleSheet, View, Text } from 'react-native';
 import CircleButton from '../elements/CircleButton';
 
 const dateString = (date) => {
-  const str = date.toDate().toISOString().split('T')[0];
-  return str;
+  const dateObject = typeof date.toDate === 'undefined' ? date : date.toDate();
+  return dateObject.toISOString().split('T')[0];
+  // const str = date.toDate().toISOString().split('T')[0];
+  // return str;
 };
 
 class MemoDetailScreen extends React.Component {

@@ -22,6 +22,12 @@ const config = {
 };
 firebase.initializeApp(config);
 
+const db = firebase.firestore();
+db.settings({
+  timestampsInSnapshots: true,
+});
+export { db };
+
 const App = createStackNavigator({
   Login:  { screen: LoginScreen },
   Signup: { screen: SignupScreen },
